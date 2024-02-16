@@ -1,0 +1,30 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Sample data for bar chart
+categories = ['Category A', 'Category B', 'Category C', 'Category D', 'Category E']
+values = [25, 40, 30, 35, 45]
+
+# Sample data for histogram
+np.random.seed(0)
+mu, sigma = 50, 10  # mean and standard deviation
+data = np.random.normal(mu, sigma, 1000)
+
+# Plotting bar chart
+plt.figure(figsize=(10, 5))
+plt.subplot(1, 2, 1)  # 1 row, 2 columns, 1st subplot
+plt.bar(categories, values, color='skyblue')
+plt.title('Bar Chart')
+plt.xlabel('Categories')
+plt.ylabel('Values')
+plt.xticks(rotation=45)
+
+# Plotting histogram
+plt.subplot(1, 2, 2)  # 1 row, 2 columns, 2nd subplot
+plt.hist(data, bins=30, color='lightgreen', edgecolor='black')
+plt.title('Histogram')
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+
+plt.tight_layout()  # Adjust layout to prevent overlap
+plt.show()
